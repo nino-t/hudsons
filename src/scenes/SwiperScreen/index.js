@@ -2,50 +2,45 @@ import React from 'react'
 import Swiper from 'react-native-swiper'
 import { StyleSheet, View, Text } from 'react-native'
 
-class SwiperScreen extends React.Component{
-	render(){
-		return (
-			<Swiper style={styles.wrapper} showsButtons={true}>
-				<View style={styles.slide1}>
-					<Text style={styles.text}>Hello Swiper</Text>
-				</View>
-				<View style={styles.slide2}>
-					<Text style={styles.text}>Beautiful</Text>
-				</View>
-				<View style={styles.slide3}>
-					<Text style={styles.text}>And simple</Text>
-				</View>
-			</Swiper>
-		)
-	}
-}
+import SlideOne from './components/SlideOne'
+import SlideTwo from './components/SlideTwo'
+import SlideThree from './components/SlideThree'
 
-const styles = StyleSheet.create({
-  wrapper: {
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+class SwiperScreen extends React.Component{
+  render(){
+    return (
+      <Swiper 
+        showsButtons={false}
+        dot={(
+          <View style={{
+              backgroundColor:'rgba(245, 246, 250,0.5)', 
+              width: 8, 
+              height: 8,
+              borderRadius: 4, 
+              marginLeft: 3, 
+              marginRight: 3, 
+              marginTop: 3, 
+              marginBottom: 3,
+            }} />
+        )}
+        activeDot={(
+          <View style={{
+              backgroundColor:'rgba(245, 246, 250,1.0)', 
+              width: 8, 
+              height: 8,
+              borderRadius: 4, 
+              marginLeft: 3, 
+              marginRight: 3, 
+              marginTop: 3, 
+              marginBottom: 3,
+            }} />
+        )}>
+        <SlideOne />
+        <SlideTwo />
+        <SlideThree />
+      </Swiper>
+    )
   }
-})
+}
 
 export default SwiperScreen
