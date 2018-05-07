@@ -6,6 +6,28 @@ import background from '../../assets/img/background_1.jpg'
 import BackgroundComponent from '../../components/BackgroundComponent'
 
 class SplashScreen extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			time: 2
+		}
+	}
+
+	componentDidMount(){
+		this.interval = setInterval(() => this.tick(), 1000);
+	}
+
+	tick() {
+		this.setState((prevState) => ({
+			time: prevState.time - 1
+		}));	
+
+    	if (this.state.time <= 0) {
+    		clearInterval(this.interval);
+      		return this.props.navigation.navigate('SwiperScreen');
+    	}
+	}		
+
 	render(){
 		return (
 			<View style={{ flex: 1}}>
