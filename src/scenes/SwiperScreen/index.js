@@ -35,9 +35,9 @@ class SwiperScreen extends React.Component{
               marginBottom: 3,
             }} />
         )}>
-        <SlideOne />
-        <SlideTwo />
-        <SlideThree />
+        <SlideOne {...this.props} />
+        <SlideTwo {...this.props} />
+        <SlideThree {...this.props} />
       </Swiper>
     )
   }

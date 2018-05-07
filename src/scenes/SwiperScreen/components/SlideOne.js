@@ -16,7 +16,9 @@ class SlideOne extends React.Component{
             Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
             Steamed percolator galao.
           </Text>          
-          <Text style={styles.textBtn}>
+          <Text 
+            style={styles.textBtn}
+            onPress={() => this.props.navigation.navigate('Discover')}>
             Get Started!
           </Text>
         </View>
