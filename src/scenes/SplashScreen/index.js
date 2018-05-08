@@ -36,7 +36,6 @@ class SplashScreen extends React.Component{
 					<Image style={styles.logo} source={logo} />
 				</View>
 			</View>
-
 		)
 	}
 }

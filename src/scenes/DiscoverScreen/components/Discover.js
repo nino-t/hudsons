@@ -10,7 +10,7 @@ class Discover extends React.Component{
           Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
           Steamed percolator galAo siphon.
         </Text>
-        <Text style={styles.btnBottom}>
+        <Text style={styles.btnBottom} onPress={() => this.props.navigation.navigate('DiscoverInput')}>
           Get Started!
         </Text>
       </View>

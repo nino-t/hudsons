@@ -9,7 +9,7 @@ class DiscoverScreen extends React.Component{
 		return (
 			<View style={{ flex: 1, flexDirection: 'column'}}>
 				<SwiperComponent />
-				<Discover />
+				<Discover {...this.props} />
 			</View>
 		)
 	}

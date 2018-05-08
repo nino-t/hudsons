@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import SplashScreen from './src/scenes/SplashScreen'
 import SwiperScreen from './src/scenes/SwiperScreen'
 import DiscoverScreen from './src/scenes/DiscoverScreen'
+import DiscoverInputScreen from './src/scenes/DiscoverInputScreen'
 
 export default class App extends React.Component {
   render() {
@@ -21,7 +22,10 @@ const RootStack = StackNavigator(
     },
     Discover: {
       screen: DiscoverScreen,
-    }
+    },
+    DiscoverInput: {
+      screen: DiscoverInputScreen,
+    },    
   },
   {
     initialRouteName: 'SplashScreen',
