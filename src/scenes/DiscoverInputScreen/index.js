@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import background from '../../assets/img/coffe.jpg'
@@ -22,7 +22,12 @@ class DiscoverInputScreen extends React.Component{
 			        </Text>
 
 			        <Text style={styles.textFooter}>
-			        	Want to skip Discover? Click here
+			        	Want to skip Discover? 
+			        	<Text 
+			        		onPress={() => this.props.navigation.navigate('Main')}
+			        		style={{ marginLeft: 10 }}>
+			        		 Click here
+			        	</Text>
 			        </Text>
 				</View>
 			</View>
