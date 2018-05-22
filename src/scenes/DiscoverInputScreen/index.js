@@ -22,10 +22,10 @@ class DiscoverInputScreen extends React.Component{
 			        </Text>
 
 			        <Text style={styles.textFooter}>
-			        	Want to skip Discover? 
+			        	Want to skip Discover?   
 			        	<Text 
 			        		onPress={() => this.props.navigation.navigate('Main')}
-			        		style={{ marginLeft: 10 }}>
+			        		style={{ paddingLeft: 20 }}>
 			        		 Click here
 			        	</Text>
 			        </Text>
