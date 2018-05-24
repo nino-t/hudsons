@@ -31,8 +31,7 @@ const RootStack = createStackNavigator({
     screen: MainScreen
   },
 },
-  {
-    initialRouteName: 'SplashScreen',
-    headerMode: 'none'
-  }
-);
+{
+  initialRouteName: 'SplashScreen',
+  headerMode: 'none'
+});

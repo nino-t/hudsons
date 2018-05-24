@@ -6,6 +6,8 @@ import DashboardScreen from './Dashboard';
 import logo from '../../assets/img/logo.png'
 import background from '../../assets/img/coffe_back.jpg'
 
+import MenuScreen from '../MenuScreen'
+
 const DashboardStack = StackNavigator(
   {
     Dashboard: {
@@ -14,11 +16,22 @@ const DashboardStack = StackNavigator(
   }
 );
 
+const MenuStack = StackNavigator(
+  {
+    Menu: {
+      screen: MenuScreen
+    }
+  }
+);
+
 const MainScreen = DrawerNavigator(
   {
     Dashboard: {
       screen: DashboardStack
-    }
+    },
+    Menu: {
+      screen: MenuStack
+    },
   },
   {
     initialRouteName: "Dashboard",
@@ -38,7 +51,7 @@ class SideBar extends React.Component {
             <Image style={styles.logo} source={logo} />
           </View>
           <Text style={styles.menuItem} onPress={() => navigation.navigate('Dashboard')}>Home</Text>
-          <Text style={styles.menuItem}>Menu</Text>
+          <Text style={styles.menuItem} onPress={() => navigation.navigate('Menu')}>Menu</Text>
           <Text style={styles.menuItem}>Favorites</Text>
           <Text style={styles.menuItem}>Shop</Text>
           <Text style={styles.menuItem}>Profile</Text>
