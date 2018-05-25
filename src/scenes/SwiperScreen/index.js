@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import Swiper from 'react-native-swiper'
-import { StyleSheet, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
 
 import SlideOne from './components/SlideOne'
 import SlideTwo from './components/SlideTwo'

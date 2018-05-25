@@ -1,45 +1,11 @@
-import React from "react";
+import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-import { DrawerNavigator, StackNavigator } from "react-navigation";
-import BackgroundComponent from '../../components/BackgroundComponent';
-import DashboardScreen from './Dashboard';
-import logo from '../../assets/img/logo.png'
-import background from '../../assets/img/coffe_back.jpg'
 
-import MenuScreen from '../MenuScreen'
+import logo from '../assets/img/logo.png'
+import background from '../assets/img/coffe_back.jpg'
+import BackgroundComponent from '../components/BackgroundComponent';
 
-const DashboardStack = StackNavigator(
-  {
-    Dashboard: {
-      screen: DashboardScreen
-    }
-  }
-);
-
-const MenuStack = StackNavigator(
-  {
-    Menu: {
-      screen: MenuScreen
-    }
-  }
-);
-
-const MainScreen = DrawerNavigator(
-  {
-    Dashboard: {
-      screen: DashboardStack
-    },
-    Menu: {
-      screen: MenuStack
-    },
-  },
-  {
-    initialRouteName: "Dashboard",
-    contentComponent: ({ navigation }) => <SideBar navigation={navigation} />
-  }
-);
-
-class SideBar extends React.Component {
+export default class SideBar extends React.Component {
   render() {
     const { navigation } = this.props
 
@@ -61,8 +27,6 @@ class SideBar extends React.Component {
     )
   }
 }
-
-export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {
