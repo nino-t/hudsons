@@ -1,24 +1,8 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import reducer from "../reducers";
 
-const initalState = {
-  foodCategories: [
-    {
-      id: 1,
-      group_name: 'Tsuki Studio',
-      title: 'Hello World',
-      favorite: false,
-      color: '#ffaf05'
-    },
-    {
-      id: 2,
-      group_name: 'Destine Digital',
-      title: 'Destine Digital HQ',
-      favorite: true,
-      color: '#ddd'
-    }
-  ]
-}
+const middleware = applyMiddleware(thunk)
+const configureStore = createStore(reducer, middleware);
 
-const configureStore = createStore(reducer, initalState);
 export default configureStore;

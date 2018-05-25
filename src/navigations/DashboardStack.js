@@ -1,9 +1,9 @@
 import React from 'react'
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import DashboardScreen from '../scenes/DashboardScreen'
 
-export const DashboardStack = StackNavigator(
+export const DashboardStack = createStackNavigator(
   {
     Dashboard: {
       screen: DashboardScreen

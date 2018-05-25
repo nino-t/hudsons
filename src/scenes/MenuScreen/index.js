@@ -1,7 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { getAll } from '../../actions/foodCategories'
 import CategoryItem from './components/CategoryItem'
 
 class MenuScreen extends React.Component{
@@ -19,23 +21,12 @@ class MenuScreen extends React.Component{
         	onPress={() => navigation.openDrawer()} />
     });
 
-	constructor(props){
-		super(props);
-		this.state = { 
-			categories: []
-		}
-	}
-
-	componentWillMount() {
-		fetch('http://192.168.0.102:8000/api/vtn/food-categories')
-		.then(response => response.json())
-		.then(json => this.setState({
-			categories: json
-		}))
-	}
+    componentWillMount() {
+    	this.props.dispatch(getAll());
+    }
 
 	render(){
-		const { categories } = this.state	
+		const { categories } = this.props			
 		return (
 			<ScrollView>
 				<View style={styles.container}>
@@ -50,11 +41,17 @@ class MenuScreen extends React.Component{
 	}
 }
 
+const mapStateToProps = state => { 
+  return {
+    categories: state.foodCategories
+  }
+}
+
+export default connect(mapStateToProps)(MenuScreen)
+
 const styles = StyleSheet.create({
   container: {
   		flex: 1,
   		flexDirection: 'column'
   }
 })
-
-export default MenuScreen

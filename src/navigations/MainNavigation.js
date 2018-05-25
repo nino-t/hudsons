@@ -1,11 +1,11 @@
 import React from 'react'
-import { DrawerNavigator } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation";
 
 import Sidebar from './Sidebar'
 import {MenuStack} from './MenuStack'
 import {DashboardStack} from './DashboardStack'
 
-export const MainNavigation = DrawerNavigator(
+export const MainNavigation = createDrawerNavigator(
   {
     Dashboard: {
       screen: DashboardStack

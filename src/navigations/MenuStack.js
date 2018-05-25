@@ -1,9 +1,9 @@
 import React from 'react'
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import MenuScreen from '../scenes/MenuScreen'
 
-export const MenuStack = StackNavigator(
+export const MenuStack = createStackNavigator(
   {
     Menu: {
       screen: MenuScreen
