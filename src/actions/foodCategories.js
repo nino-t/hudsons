@@ -14,7 +14,7 @@ export const getAll = () => {
 
   function success(categories) {
     return { 
-      type: constFoodCategories.GET_ALL,
+      type: constFoodCategories.GET_LIST,
       categories
     }
   }

@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 class CategoryItem extends React.Component{
 	render(){
-		const { category } = this.props
+		const { category, handleClick } = this.props
 		return (
-			<View style={styles.container}>
+			<TouchableOpacity style={styles.container} onPress={handleClick}>
 				<Image 
 					style={styles.categoryBackground} 
 					source={{uri: category.background}} />
@@ -14,7 +14,7 @@ class CategoryItem extends React.Component{
 					<Text style={styles.titleText}>{category.name}</Text>
 					<Text style={styles.descText}>{category.short_desc}</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 		)
 	}
 }

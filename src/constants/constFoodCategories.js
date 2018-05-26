@@ -1,3 +1,3 @@
 export const constFoodCategories = {
-    GET_ALL: 'GET_ALL',
+    GET_LIST: 'GET_FOOD_CATEGORIES_LIST',
 };
