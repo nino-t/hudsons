@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { getAll } from '../../actions/foodCategories'
-import CategoryItem from './components/CategoryItem'
+import FoodItem from './components/FoodItem'
+import { getByCategories } from '../../actions/Food'
 
-class MenuScreen extends React.Component{
+class ShopScreen extends React.Component{
 	static navigationOptions = ({navigation}) => ({
-    title: 'Menu',
+    title: navigation.getParam('title'),
     headerTitleStyle: { textAlign: 'center',alignSelf:'center', width: '100%', marginLeft: -20},
     headerStyle:{
         backgroundColor:'white'
@@ -22,46 +22,43 @@ class MenuScreen extends React.Component{
   });
 
   componentWillMount() {
-  	this.props.dispatch(getAll());
-  }
+    const { navigation } = this.props
+    const category_id = navigation.getParam('category_id')
 
-  toShop(category_id, title){
-    this.props.navigation.navigate('Shop', {
-      category_id: category_id,
-      title: title
-    });
-  }
+    this.props.dispatch(getByCategories(category_id));
+  }  
 
 	render(){
-		const { categories } = this.props			
+    const { foods } = this.props
+    
 		return (
 			<ScrollView>
 				<View style={styles.container}>
-					{
-						categories.map((category, index) => 
-							<CategoryItem 
-                key={category.id} 
-                category={category}
-                handleClick={() => this.toShop(category.id, category.name)} /> 
-						)
-					}
+          {
+            foods.map((food, index) => 
+              <FoodItem
+                key={food.id}
+                food={food} />
+            )
+          }
 				</View>
 			</ScrollView>
 		)
 	}
 }
 
-const mapStateToProps = state => { 
+const mapStateToProps = state => {
   return {
-    categories: state.foodCategories
+    foods: state.foods
   }
 }
-
-export default connect(mapStateToProps)(MenuScreen)
 
 const styles = StyleSheet.create({
   container: {
   		flex: 1,
-  		flexDirection: 'column'
+  		flexDirection: 'row',
+      flexWrap: 'wrap'
   }
 })
+
+export default connect(mapStateToProps)(ShopScreen)
