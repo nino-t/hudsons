@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { getAll } from '../../actions/foodCategories'
@@ -11,13 +11,13 @@ class MenuScreen extends React.Component{
     title: 'Menu',
     headerTitleStyle: { textAlign: 'center',alignSelf:'center', width: '100%', marginLeft: -20},
     headerStyle:{
-        backgroundColor:'white'
+        backgroundColor:'#ecf0f1'
     },
     headerLeft: <Icon 
     	name="navicon" 
     	size={20} 
     	color="#34495e" 
-    	style={{ marginLeft: 15 }} 
+    	style={{ marginLeft: 18 }} 
     	onPress={() => navigation.openDrawer()} />
   });
 
@@ -35,18 +35,25 @@ class MenuScreen extends React.Component{
 	render(){
 		const { categories } = this.props			
 		return (
-			<ScrollView>
-				<View style={styles.container}>
-					{
-						categories.map((category, index) => 
-							<CategoryItem 
-                key={category.id} 
-                category={category}
-                handleClick={() => this.toShop(category.id, category.name)} /> 
-						)
-					}
-				</View>
-			</ScrollView>
+      <View style={{ flex: 1 }}>
+        <StatusBar 
+          backgroundColor="#bdc3c7"
+          barStyle="dark-content"
+          translucent={false} />       
+
+  			<ScrollView>
+  				<View style={styles.container}>
+  					{
+  						categories.map((category, index) => 
+  							<CategoryItem 
+                  key={category.id} 
+                  category={category}
+                  handleClick={() => this.toShop(category.id, category.name)} /> 
+  						)
+  					}
+  				</View>
+  			</ScrollView>
+      </View>
 		)
 	}
 }

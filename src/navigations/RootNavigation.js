@@ -7,6 +7,8 @@ import DiscoverScreen from '../scenes/DiscoverScreen'
 import DiscoverInputScreen from '../scenes/DiscoverInputScreen'
 import {MainNavigation} from "../navigations/MainNavigation";
 
+import DevAnimation from '../scenes/DevAnimation'
+
 export const RootNavigation = createStackNavigator({
   SplashScreen: {
     screen: SplashScreen,
@@ -23,6 +25,9 @@ export const RootNavigation = createStackNavigator({
   Main: {
     screen: MainNavigation
   },
+  DevAnimation: {
+    screen: DevAnimation
+  }
 },
 {
   initialRouteName: 'SplashScreen',

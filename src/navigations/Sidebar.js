@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   menuItem: {
-    color: '#fff',
+    color: '#ecf0f1',
     fontSize: 17,
     paddingVertical: 13,
     paddingHorizontal: 20,

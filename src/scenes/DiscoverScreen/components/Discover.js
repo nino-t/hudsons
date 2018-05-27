@@ -7,8 +7,8 @@ class Discover extends React.Component{
       <View style={styles.container}>
         <Text style={styles.textTitle}>DISCOVER</Text>
         <Text style={styles.textDesc}>
-          Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
-          Steamed percolator galAo siphon.
+          Discovery Coffee began with a love of coffee and has 
+          turned into a passionate exploration of what it takes to make only the best.
         </Text>
         <Text style={styles.btnBottom} onPress={() => this.props.navigation.navigate('DiscoverInput')}>
           Get Started!
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
   },  
   btnBottom: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 0, 
     left: 0,
     paddingHorizontal: 20,
     paddingVertical: 20,
     backgroundColor: '#16a085',
-    color: '#fff',
+    color: '#ecf0f1',
     fontSize: 16,
     width: '100%',
     fontWeight: 'bold',
