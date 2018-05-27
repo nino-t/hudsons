@@ -1,13 +1,22 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class FoodItem extends React.Component{
+	strLimit(text){
+		if(text.length > 20){
+			text = text.substring(0,20);
+		}
+
+		return text
+	}
+
 	render(){
 		const { food } = this.props
 		return (
 			<View style={styles.container}>
 				<View style={styles.wrapHead}>
-					<Text style={styles.titleText}>{food.name}</Text>
+					<Text style={styles.titleText}>{this.strLimit(food.name)}</Text>
 					<Text style={styles.subTitleText}>Hudsons Coffe</Text>
 				</View>
 				<View style={styles.wrapThumbnail}>
@@ -16,10 +25,16 @@ class FoodItem extends React.Component{
 						source={{uri: food.thumbnail}} />
 				</View>				
 				<View style={styles.wrapContent}>
-					<View>
+					<View style={{ width: '50%' }}>
 						<Text style={styles.textPrice}>$ {food.price}</Text>
 					</View>
-					<View></View>					
+					<View style={{ width: '50%' }}>
+						<Icon 
+					    	name="heart" 
+					    	size={20} 
+					    	color="#fc5c65"
+					    	style={styles.favoriteIcon} />
+					</View>					
 				</View>
 			</View>
 		)
@@ -28,21 +43,21 @@ class FoodItem extends React.Component{
 
 const styles = StyleSheet.create({
 	container: {
-		width: '48%',
+		width: '47%',
 		height: 280,
 		elevation: 1,
-	    margin: 3,
+	    margin: 5,
 	    padding: 10,
 	    backgroundColor: '#fff'
 	},
 	wrapHead: {
-		height: '20%'
+		height: '30%'
 	},
 	wrapThumbnail:{
 		height: '60%'
 	},
 	wrapContent: {
-		height: '20%',
+		height: '10%',
 		flexDirection: 'row'
 	},
 	thumbnailFood: {
@@ -63,7 +78,14 @@ const styles = StyleSheet.create({
 	textPrice: {
 		color: '#16a085',
 		fontWeight: 'bold',
-		fontSize: 20
+		fontSize: 20,
+		letterSpacing: 0
+	},
+	favoriteIcon:{
+		marginTop: 5,
+		position: 'absolute',
+		bottom: 0,
+		right: 0
 	}
 })
 
