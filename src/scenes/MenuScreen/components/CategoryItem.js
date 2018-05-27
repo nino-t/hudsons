@@ -5,7 +5,10 @@ class CategoryItem extends React.Component{
 	render(){
 		const { category, handleClick } = this.props
 		return (
-			<TouchableOpacity style={styles.container} onPress={handleClick}>
+			<TouchableOpacity 
+				style={styles.container} 
+				onPress={handleClick}
+				activeOpacity={0.5}>
 				<Image 
 					style={styles.categoryBackground} 
 					source={{uri: category.background}} />
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
 	container: {
 		width: '100%',
 		height: 160,
-	 	borderBottomWidth: 3,
+	 	borderBottomWidth: 1,
 	    borderBottomColor: '#ecf0f1',		
 	},	
 	categoryBackground: {
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		height: '100%',
 		width: '100%',
-		backgroundColor: 'rgba(0,0,0,0.7)',
+		backgroundColor: 'rgba(0,0,0,0.5)',
 		paddingHorizontal: 25
 	},
 	titleText: {

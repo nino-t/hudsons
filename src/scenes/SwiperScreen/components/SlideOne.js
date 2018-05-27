@@ -13,8 +13,8 @@ class SlideOne extends React.Component{
         <View style={styles.container}>
           <Image style={styles.logo} source={logo} />
           <Text style={styles.textDesc}>
-            Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
-            Steamed percolator galao.
+            Science may never come up with a better office 
+            communication system than the coffee break.
           </Text>          
           <Text 
             style={styles.textBtn}
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginBottom: 200
   },
   textDesc: {
-    color: '#fff',
+    color: '#ecf0f1',
     textAlign: 'center',
     paddingHorizontal: 40,
     fontSize: 15,
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   textBtn:{
-    color: '#fff',
+    color: '#ecf0f1',
     borderWidth: 2,
-    borderColor: '#fff',
+    borderColor: '#ecf0f1',
     paddingHorizontal: 20,
     paddingVertical: 10
   }

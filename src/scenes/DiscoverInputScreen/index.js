@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, View, Text, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import background from '../../assets/img/coffe.jpg'
+import background from '../../assets/img/coffe_discover.jpg'
 import BackgroundComponent from '../../components/BackgroundComponent'
 import TextInputComponent from '../../components/TextInputComponent'
 
@@ -17,18 +17,19 @@ class DiscoverInputScreen extends React.Component{
 						placeholder="Find your favorite breakfast & coffee..."
 						icon={<Icon name="search" size={20} color="#bdc3c7" />} />
 			        <Text style={styles.textDesc}>
-			          Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
-			          Steamed percolator galAo siphon.
+			          Discovery Coffee began with a love of coffee and has 
+			          turned into a passionate exploration of what it takes to make only the best.
 			        </Text>
 
-			        <Text style={styles.textFooter}>
-			        	Want to skip Discover?   
-			        	<Text 
-			        		onPress={() => this.props.navigation.navigate('Main')}
-			        		style={{ paddingLeft: 20 }}>
-			        		 Click here
-			        	</Text>
-			        </Text>
+			        <View style={styles.wrapFooter}>
+				        <Text style={styles.textFooter}>
+				        	Want to skip discover?   
+				        </Text>
+			        	<Text style={[styles.textFooter, { marginLeft: 5 }]}
+			        		onPress={() => this.props.navigation.navigate('Main')}>
+			        		 click here
+			        	</Text>				        
+			        </View>
 				</View>
 			</View>
 		)
@@ -37,7 +38,7 @@ class DiscoverInputScreen extends React.Component{
 
 const styles = StyleSheet.create({
   container: {
-	position: 'absolute',
+	position: 'absolute', 
 	top: 0,
 	bottom: 0,
 	left: 0,
@@ -46,29 +47,31 @@ const styles = StyleSheet.create({
 	alignItems: 'center',
   },
   textTitle: {
-    color: '#fff',
+    color: '#ecf0f1',
     fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 40
+    marginBottom: 40,
   },
   textDesc: {
-    color: '#fff',
+    color: '#ecf0f1',
     textAlign: 'center',
     paddingHorizontal: 40,
     fontSize: 15,
     lineHeight: 25,
     marginTop: 40,
   },    
-  textFooter: {
+  wrapFooter: {
   	width: '100%',
 	position: 'absolute',
 	bottom: 0,
 	justifyContent: 'center',
 	alignItems: 'center',
-    color: '#fff',
-    textAlign: 'center',	
+	marginBottom: 30,
+	flexDirection: 'row',
+  },
+  textFooter: {
+    color: '#ecf0f1',
     fontSize: 15,
-    marginBottom: 30
   }
 })
 

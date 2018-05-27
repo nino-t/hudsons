@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, StatusBar } from 'react-native';
 
 class DashboardScreen extends React.Component{
 	static navigationOptions = {
@@ -14,6 +14,11 @@ class DashboardScreen extends React.Component{
 	render(){
 		return (
 			<View style={{ flex: 1}}>
+		        <StatusBar 
+		          backgroundColor="#ecf0f1"
+		          barStyle="dark-content"
+		          translucent={false} />      
+
 				<Text>Dashboard</Text>
 			</View>
 		)

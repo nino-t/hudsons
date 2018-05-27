@@ -17,7 +17,7 @@ class ShopScreen extends React.Component{
     	name="navicon" 
     	size={20} 
     	color="#34495e" 
-    	style={{ marginLeft: 15 }} 
+    	style={{ marginLeft: 18 }} 
     	onPress={() => navigation.openDrawer()} />
   });
 

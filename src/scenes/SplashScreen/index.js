@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, StatusBar, ActivityIndicator } from 'react-native';
 
 import logo from '../../assets/img/logo.png'
 import background from '../../assets/img/background_1.jpg'
@@ -31,9 +31,12 @@ class SplashScreen extends React.Component{
 	render(){
 		return (
 			<View style={{ flex: 1}}>
+		        <StatusBar translucent backgroundColor="rgba(255, 255, 255, 0)" />    
 				<BackgroundComponent source={background} />
 				<View style={styles.container}>
 					<Image style={styles.logo} source={logo} />
+					<ActivityIndicator size="large" color="#ecf0f1" style={styles.loading} />
+					<Text style={styles.textCopyRight}>Version 1.0 | Powered by Trisno Nino</Text>
 				</View>
 			</View>
 		)
@@ -53,9 +56,16 @@ const styles = StyleSheet.create({
   logo: {
 		width: 140,
 		height: 85,
-		position: 'absolute',
-		right: 20, 
-		bottom: 20,
+  },  
+  textCopyRight: {
+  	position: 'absolute',
+  	bottom: 0,
+  	color: '#ecf0f1',
+  	fontSize: 12,
+  	marginBottom: 20
+  },
+  loading: {
+  	marginTop: 100
   }
 })
 

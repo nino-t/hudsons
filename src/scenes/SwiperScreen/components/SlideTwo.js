@@ -13,8 +13,7 @@ class SlideTwo extends React.Component{
         <View style={styles.container}>
           <Image style={styles.logo} source={logo} />
           <Text style={styles.textDesc}>
-            Redeye cup, single origin in java plunger pot viennese extraction filter wings. 
-            Steamed percolator galao.
+            Good communication is as stimulating as black coffee, and just as hard to sleep after.
           </Text>          
           <Text 
             style={styles.textBtn}
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
     marginBottom: 200
   },
   textDesc: {
-    color: '#fff',
+    color: '#ecf0f1',
     textAlign: 'center',
     paddingHorizontal: 40,
     fontSize: 15,
@@ -54,9 +53,9 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   textBtn:{
-    color: '#fff',
+    color: '#ecf0f1',
     borderWidth: 2,
-    borderColor: '#fff',
+    borderColor: '#ecf0f1',
     paddingHorizontal: 20,
     paddingVertical: 10
   }
