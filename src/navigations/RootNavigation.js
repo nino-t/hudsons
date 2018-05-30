@@ -30,6 +30,6 @@ export const RootNavigation = createStackNavigator({
   }
 },
 {
-  initialRouteName: 'SplashScreen',
+  initialRouteName: 'Main',
   headerMode: 'none'
 })

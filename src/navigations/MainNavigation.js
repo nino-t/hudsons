@@ -15,7 +15,7 @@ export const MainNavigation = createDrawerNavigator(
     },
   },
   {
-    initialRouteName: "Dashboard",
+    initialRouteName: "Menu",
     contentComponent: ({ navigation }) => <Sidebar navigation={navigation} />
   }
 );

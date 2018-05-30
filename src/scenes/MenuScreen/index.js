@@ -25,10 +25,9 @@ class MenuScreen extends React.Component{
   	this.props.dispatch(getAll());
   }
 
-  toShop(category_id, title){
+  toShop(category){
     this.props.navigation.navigate('Shop', {
-      category_id: category_id,
-      title: title
+      category: JSON.stringify(category)
     });
   }
 
@@ -48,7 +47,7 @@ class MenuScreen extends React.Component{
   							<CategoryItem 
                   key={category.id} 
                   category={category}
-                  handleClick={() => this.toShop(category.id, category.name)} /> 
+                  handleClick={() => this.toShop(category)} /> 
   						)
   					}
   				</View>
